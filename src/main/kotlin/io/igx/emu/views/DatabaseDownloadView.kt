@@ -7,7 +7,9 @@ import javafx.beans.property.ReadOnlyObjectWrapper
 import javafx.geometry.HPos
 import javafx.scene.control.TableView
 import javafx.scene.layout.Priority
-import tornadofx.*
+import tornadofx.*;
+
+
 
 /**
  * @author vinicius
@@ -16,7 +18,7 @@ import tornadofx.*
 
 class DatabaseDownloadView : View("My View") {
 
-    val controller: DatabaseController by inject()
+    val controller: DatabaseController by di()
 
 
     init {
