@@ -1,5 +1,6 @@
 package io.igx.emu.views
 
+import javafx.scene.control.TreeItem
 import tornadofx.*
 
 /**
@@ -10,6 +11,7 @@ import tornadofx.*
 class DrawerWorkspace : Workspace() {
 
     init {
+        val emulatorTreeView = find<EmulatorTreeView>()
         add(RestProgressBar::class)
         menubar{
             menu ("File"){
@@ -26,11 +28,12 @@ class DrawerWorkspace : Workspace() {
         }
 
         with(leftDrawer){
-            item("Databases"){
 
+            item("Databases"){
+                add(emulatorTreeView)
             }
             item("Collections"){
-
+                treeview(TreeItem("Collections"))
             }
         }
     }

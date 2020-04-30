@@ -11,10 +11,10 @@ class DatabaseController : Controller() {
 
     fun listDownloads() : List<EmulatorDownload> {
         return  listOf(
-            EmulatorDownload("MAME" ,"0.202", "NOT_PRESENT", ""),
-            EmulatorDownload("MAME" ,"0.193", "NOT_PRESENT", ""),
-            EmulatorDownload("FBAlpha" ,"0.194", "PRESENT", ""),
-            EmulatorDownload("FBAlpha" ,"0.193", "NOT_PRESENT", "")
+            EmulatorDownload("MAME" ,"0.202", false, ""),
+            EmulatorDownload("MAME" ,"0.193", true, ""),
+            EmulatorDownload("FBAlpha" ,"0.2.97.43", true, ""),
+            EmulatorDownload("FBAlpha" ,"0.2.97.42", false, "")
         )
     }
 }

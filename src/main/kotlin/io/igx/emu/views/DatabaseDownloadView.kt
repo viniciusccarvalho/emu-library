@@ -38,24 +38,17 @@ class DatabaseDownloadView : View("My View") {
                     column("Emulator", EmulatorDownload::name)
                     column("Version", EmulatorDownload::version)
 
-                    column("Status", EmulatorDownload::status).cellFormat {
-
-                        if(it == "NOT_PRESENT"){
+                    column("Status", EmulatorDownload::local).cellFormat {
+                        if(!it){
                             graphic = button("download") {  }
-                        }else{
-                            graphic = button("here"){}
+                        }
+                        else{
+                            graphic = text("DOWNLOADED") {  }
                         }
                     }
                 }
             }
-            gridpane {
-                button("Download Selected") {
 
-                }.gridpaneConstraints {
-                    hAlignment = HPos.RIGHT
-                    columnRowIndex(2,2)
-                }
-            }
         }
 
 }
