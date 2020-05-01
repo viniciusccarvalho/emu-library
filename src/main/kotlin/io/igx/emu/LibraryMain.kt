@@ -1,5 +1,6 @@
 package io.igx.emu
 
+import io.igx.emu.config.common
 import io.igx.emu.config.controllers
 import io.igx.emu.views.DrawerWorkspace
 import javafx.stage.Stage
@@ -23,7 +24,7 @@ class LibraryMain : App(DrawerWorkspace::class){
     lateinit var koinApplication: KoinApplication
     init {
         koinApplication = startKoin{
-            modules(listOf(controllers))
+            modules(listOf(controllers, common))
         }
         FX.dicontainer = object : DIContainer {
             override fun <T : Any> getInstance(type: KClass<T>): T {

@@ -6,6 +6,7 @@
     requires tornadofx;
     requires kotlin.stdlib;
     requires koin.core;
+    requires org.jdbi.v3.core;
 
 
     exports io.igx.emu.views;

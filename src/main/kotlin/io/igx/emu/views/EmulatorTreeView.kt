@@ -3,7 +3,6 @@ package io.igx.emu.views
 import io.igx.emu.controllers.DatabaseController
 import io.igx.emu.model.EmulatorDownload
 import io.igx.emu.model.NodePrinter
-import javafx.scene.control.TreeCell
 import javafx.scene.control.TreeItem
 import javafx.scene.image.ImageView
 import javafx.scene.layout.Priority
@@ -15,7 +14,7 @@ import tornadofx.*
  */
 class EmulatorTreeView : Fragment("Available databases") {
 
-    val controller: DatabaseController by inject()
+    val controller: DatabaseController by di()
 
     override val root = scrollpane {
         vgrow = Priority.ALWAYS
