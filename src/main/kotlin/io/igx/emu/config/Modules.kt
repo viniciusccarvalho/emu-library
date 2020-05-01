@@ -1,6 +1,7 @@
 package io.igx.emu.config
 
 import io.igx.emu.controllers.DatabaseController
+import io.igx.emu.services.DatabaseService
 import org.jdbi.v3.core.Jdbi
 import org.jdbi.v3.core.h2.H2DatabasePlugin
 import org.koin.dsl.module
@@ -16,6 +17,10 @@ val controllers = module {
 
 val common = module {
     single(createdAtStart = true) { jdbi() }
+}
+
+val services = module {
+    single { DatabaseService(get ())}
 }
 
 fun jdbi() : Jdbi {
