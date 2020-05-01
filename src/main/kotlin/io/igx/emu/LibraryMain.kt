@@ -4,6 +4,7 @@ import io.igx.emu.views.DrawerWorkspace
 import javafx.stage.Stage
 import tornadofx.App
 import tornadofx.Workspace
+import tornadofx.launch
 
 /**
  * @author vinicius
@@ -17,4 +18,10 @@ class LibraryMain : App(DrawerWorkspace::class){
         stage.height = 768.0
     }
 
+    companion object{
+        @JvmStatic
+        fun main(args: Array<String>) {
+            launch<LibraryMain>(args)
+        }
+    }
 }

@@ -10,8 +10,8 @@ group 'org.example'
 version '1.0-SNAPSHOT'
 
 application {
-    mainClassName = "io.igx.emu.LibraryMain"
-    applicationDefaultJvmArgs = ['--add-opens=javafx.graphics/javafx.scene=tornadofx']
+    mainClassName = "io.igx.emu.ApplicationLauncher"
+    //applicationDefaultJvmArgs = ['--add-opens=javafx.graphics/javafx.scene=tornadofx']
 }
 
 repositories {
